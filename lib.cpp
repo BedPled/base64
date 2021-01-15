@@ -145,5 +145,11 @@ string base64ToAscii (string inStr) {
         outStr += fourToAscii(inStr[i], inStr[i + 1], inStr[i + 2], inStr[i + 3]);
     }
 
+    int i = outStr.length();
+    while (outStr[i - 1] == '\0') {
+        outStr.erase(i-1);
+        i--;
+    }
+
     return outStr;
 }
